@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AC7AE7F41CD60F9E007DD40B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AE7F31CD60F9E007DD40B /* DetailViewController.swift */; };
 		AC7AE80D1CD64E1A007DD40B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7AE8001CD64CA1007DD40B /* SQLite.framework */; };
+		AC7AE80F1CD76690007DD40B /* AddTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AE80E1CD76690007DD40B /* AddTitleViewController.swift */; };
+		AC9C2A171CD769FC00588039 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C2A161CD769FC00588039 /* Database.swift */; };
 		ACC452FD1CCE16E700AA4C64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC452FC1CCE16E700AA4C64 /* AppDelegate.swift */; };
 		ACC452FF1CCE16E700AA4C64 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC452FE1CCE16E700AA4C64 /* TableViewController.swift */; };
 		ACC453021CCE16E700AA4C64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC453001CCE16E700AA4C64 /* Main.storyboard */; };
@@ -87,6 +89,8 @@
 /* Begin PBXFileReference section */
 		AC7AE7F31CD60F9E007DD40B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AC7AE7F51CD64CA1007DD40B /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../Desktop/External Swift Projects/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		AC7AE80E1CD76690007DD40B /* AddTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTitleViewController.swift; sourceTree = "<group>"; };
+		AC9C2A161CD769FC00588039 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		ACC452F91CCE16E700AA4C64 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC452FC1CCE16E700AA4C64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC452FE1CCE16E700AA4C64 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +172,9 @@
 				AC7AE7F51CD64CA1007DD40B /* SQLite.xcodeproj */,
 				ACC452FC1CCE16E700AA4C64 /* AppDelegate.swift */,
 				ACC452FE1CCE16E700AA4C64 /* TableViewController.swift */,
+				AC7AE80E1CD76690007DD40B /* AddTitleViewController.swift */,
 				AC7AE7F31CD60F9E007DD40B /* DetailViewController.swift */,
+				AC9C2A161CD769FC00588039 /* Database.swift */,
 				ACC453001CCE16E700AA4C64 /* Main.storyboard */,
 				ACC453031CCE16E700AA4C64 /* Assets.xcassets */,
 				ACC453051CCE16E700AA4C64 /* LaunchScreen.storyboard */,
@@ -388,7 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7AE7F41CD60F9E007DD40B /* DetailViewController.swift in Sources */,
+				AC7AE80F1CD76690007DD40B /* AddTitleViewController.swift in Sources */,
 				ACC452FF1CCE16E700AA4C64 /* TableViewController.swift in Sources */,
+				AC9C2A171CD769FC00588039 /* Database.swift in Sources */,
 				ACC452FD1CCE16E700AA4C64 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
