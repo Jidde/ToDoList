@@ -37,21 +37,18 @@ class AddTitleViewController: UIViewController {
     }
     
     @IBAction func saveToDo(sender: AnyObject) {
-        
         let insert = toDo.insert(task <- inputToDo.text!)
-        
         do {
             let rowID = try database!.run(insert)
             print (rowID)
         } catch {
             print("Error creating to do: \(error)")
         }
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     private func setUpDatabase() {
-    
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-    
         do {
             database = try Connection("\(path)/db.sqlite3")
         } catch {
@@ -59,13 +56,11 @@ class AddTitleViewController: UIViewController {
         }
     }
     
-    
     private func createTable () {
-        
         do {
             try database!.run(toDo.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .Autoincrement)
-                t.column(task)
+                t.column(task, unique: true)
                 t.column(detail)
                 } )
         } catch {
