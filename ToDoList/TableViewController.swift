@@ -21,12 +21,13 @@ class TableViewController: UITableViewController {
     // details
     let detail = Expression<String?>("detail")
     
-    
     private var database: Connection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        connect()
+        retrieveToDos()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,50 +45,58 @@ class TableViewController: UITableViewController {
         }
     }
     
-    private func retrieveToDo() {
-        
-        do {
-            for task in try database!.prepare(toDo) {
-                print(task)
+    private func retrieveToDos() {
+        if database != nil {
+            do {
+                for todo in try database!.prepare(toDo) {
+                    print("id: \(todo[id]), task: \(todo[task]!)")
+                    tasks?.append(todo[task]!)
+                    print(tasks)
+                }
+            } catch {
+                print("Could not retrieve data from database: \(error)")
             }
-        } catch {
-            
-            print("Could not retrieve data from database: \(error)")
-            
         }
-        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return placeholderArray.count
+        //return placeholderArray.count
+        if tasks != nil {
+            return tasks!.count
+        }
+        else {
+            return 0
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
         
-        cell?.textLabel!.text = placeholderArray[indexPath.row]
+        //cell?.textLabel!.text = placeholderArray[indexPath.row]
+        if tasks != nil {
+            cell?.textLabel!.text = tasks![indexPath.row]
+        }
         
         return cell!
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         performSegueWithIdentifier("detailSegue", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "detailSegue" {
-            
-            if let svc = segue.destinationViewController as? DetailViewController {
-                
-                
-                
-            }
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        if segue.identifier == "detailSegue" {
+//            
+//            if let svc = segue.destinationViewController as? DetailViewController {
+//                
+//                
+//                
+//            }
+//        }
+//    }
     
     
     
