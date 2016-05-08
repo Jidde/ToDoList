@@ -62,12 +62,10 @@ class DetailViewController: UIViewController {
     
     /// save the details which goes with the todo
     private func saveDetail() {
-        
         let placeInTable = toDo.filter(task == todo)
-        
         do {
             try database!.run(placeInTable.update(detail <- textField.text!))
-            print("succes")
+            print("Succes")
         } catch {
             print("Details not saved: \(error)") 
         }
@@ -75,9 +73,7 @@ class DetailViewController: UIViewController {
     
     /// connect to the database
     private func connect() {
-        
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
-        
         do {
             database = try Connection("\(path)/db.sqlite3")
         } catch {

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC1A58D71CDFD8C200BFFFC9 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = AC1A58D61CDFD8C200BFFFC9 /* Readme.md */; };
+		AC1A58DF1CDFE0FC00BFFFC9 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7AE8001CD64CA1007DD40B /* SQLite.framework */; };
+		AC1A58E01CDFE0FC00BFFFC9 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC7AE8001CD64CA1007DD40B /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC1A58E71CDFEA0500BFFFC9 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = AC1A58E61CDFEA0500BFFFC9 /* Readme.md */; };
 		AC7AE7F41CD60F9E007DD40B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AE7F31CD60F9E007DD40B /* DetailViewController.swift */; };
 		AC7AE80D1CD64E1A007DD40B /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC7AE8001CD64CA1007DD40B /* SQLite.framework */; };
 		AC7AE80F1CD76690007DD40B /* AddTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7AE80E1CD76690007DD40B /* AddTitleViewController.swift */; };
@@ -22,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AC1A58E11CDFE0FC00BFFFC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC7AE7F51CD64CA1007DD40B /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE247AD21C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
 		AC7AE7FF1CD64CA1007DD40B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AC7AE7F51CD64CA1007DD40B /* SQLite.xcodeproj */;
@@ -87,8 +96,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AC1A58E31CDFE0FC00BFFFC9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AC1A58E01CDFE0FC00BFFFC9 /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		AC1A58D61CDFD8C200BFFFC9 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		AC1A58E61CDFEA0500BFFFC9 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../Readme.md; sourceTree = "<group>"; };
 		AC7AE7F31CD60F9E007DD40B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AC7AE7F51CD64CA1007DD40B /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../Desktop/External Swift Projects/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		AC7AE80E1CD76690007DD40B /* AddTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTitleViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1A58DF1CDFE0FC00BFFFC9 /* SQLite.framework in Frameworks */,
 				AC7AE80D1CD64E1A007DD40B /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,7 +202,7 @@
 				AC7AE7F31CD60F9E007DD40B /* DetailViewController.swift */,
 				AC9C2A161CD769FC00588039 /* Database.swift */,
 				ACC453001CCE16E700AA4C64 /* Main.storyboard */,
-				AC1A58D61CDFD8C200BFFFC9 /* Readme.md */,
+				AC1A58E61CDFEA0500BFFFC9 /* Readme.md */,
 				ACC453031CCE16E700AA4C64 /* Assets.xcassets */,
 				ACC453051CCE16E700AA4C64 /* LaunchScreen.storyboard */,
 				ACC453081CCE16E700AA4C64 /* Info.plist */,
@@ -214,10 +238,12 @@
 				ACC452F51CCE16E700AA4C64 /* Sources */,
 				ACC452F61CCE16E700AA4C64 /* Frameworks */,
 				ACC452F71CCE16E700AA4C64 /* Resources */,
+				AC1A58E31CDFE0FC00BFFFC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AC1A58E21CDFE0FC00BFFFC9 /* PBXTargetDependency */,
 			);
 			name = ToDoList;
 			productName = ToDoList;
@@ -398,7 +424,7 @@
 			files = (
 				AC7AE7F41CD60F9E007DD40B /* DetailViewController.swift in Sources */,
 				AC7AE80F1CD76690007DD40B /* AddTitleViewController.swift in Sources */,
-				AC1A58D71CDFD8C200BFFFC9 /* Readme.md in Sources */,
+				AC1A58E71CDFEA0500BFFFC9 /* Readme.md in Sources */,
 				ACC452FF1CCE16E700AA4C64 /* TableViewController.swift in Sources */,
 				AC9C2A171CD769FC00588039 /* Database.swift in Sources */,
 				ACC452FD1CCE16E700AA4C64 /* AppDelegate.swift in Sources */,
@@ -424,6 +450,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AC1A58E21CDFE0FC00BFFFC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = AC1A58E11CDFE0FC00BFFFC9 /* PBXContainerItemProxy */;
+		};
 		ACC4530F1CCE16E700AA4C64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ACC452F81CCE16E700AA4C64 /* ToDoList */;
@@ -545,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.mprog.ToDoList;
@@ -556,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.mprog.ToDoList;

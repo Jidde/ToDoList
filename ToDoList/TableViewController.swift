@@ -25,17 +25,25 @@ class TableViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         connect()
         retrieveToDos()
+        tableView.reloadData()
 
 //        do {
 //           try database!.run(toDo.drop())
 //            print("Table succesfully deleted")
 //        } catch {
-//            print("de eenmalige drop table is al gedaan")
+//            print("De eenmalige drop table is al gedaan")
 //        }
         
+        // edit button in navbar
         navigationItem.leftBarButtonItem = editButtonItem()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tasks.removeAll() 
+        retrieveToDos()
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
