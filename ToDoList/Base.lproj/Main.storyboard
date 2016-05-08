@@ -15,11 +15,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="jt7-BD-CD9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" id="jt7-BD-CD9">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jt7-BD-CD9" id="M8l-BP-QO5">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -133,6 +133,9 @@
                             <constraint firstItem="vN4-2g-qOH" firstAttribute="top" secondItem="7B1-Mh-Yy9" secondAttribute="bottom" id="s4J-4u-d7z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="7B1-Mh-Yy9" id="OdR-Qk-Rij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQ2-w2-YpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

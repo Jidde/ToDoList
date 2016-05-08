@@ -12,7 +12,7 @@ import SQLite
 class TableViewController: UITableViewController {
     
     let placeholderArray = ["test","test2","test3","test4","test5"]
-    var tasks: [String]?
+    var tasks = [String]()
 
     let toDo = Table("ToDo")
     let id = Expression<Int64>("id")
@@ -50,7 +50,7 @@ class TableViewController: UITableViewController {
             do {
                 for todo in try database!.prepare(toDo) {
                     print("id: \(todo[id]), task: \(todo[task]!)")
-                    tasks?.append(todo[task]!)
+                    tasks.append(todo[task]!)
                     print(tasks)
                 }
             } catch {
@@ -62,12 +62,8 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //return placeholderArray.count
-        if tasks != nil {
-            return tasks!.count
-        }
-        else {
-            return 0
-        }
+        return tasks.count
+
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,9 +71,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
         
         //cell?.textLabel!.text = placeholderArray[indexPath.row]
-        if tasks != nil {
-            cell?.textLabel!.text = tasks![indexPath.row]
-        }
+        cell?.textLabel!.text = tasks[indexPath.row]
         
         return cell!
     }
@@ -86,19 +80,14 @@ class TableViewController: UITableViewController {
         performSegueWithIdentifier("detailSegue", sender: self)
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if segue.identifier == "detailSegue" {
-//            
-//            if let svc = segue.destinationViewController as? DetailViewController {
-//                
-//                
-//                
-//            }
-//        }
-//    }
     
     
     
 }
+
+
+
+
+
+
 

@@ -7,29 +7,81 @@
 //
 
 import UIKit
+import SQLite
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var textField: UITextView!
 
+    // MARK: SQLite database
+    private var database: Connection?
+    
+    let toDo = Table("ToDo")
+    let id = Expression<Int64>("id")
+    let task = Expression<String?>("task")
+    
+    // details
+    let detail = Expression<String?>("detail")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        connect()
+        
+        // from: http://stackoverflow.com/questions/5085452/override-back-button-in-navigation-stack
+        // & http://stackoverflow.com/questions/27713747/execute-action-when-back-bar-button-of-uinavigationcontroller-is-pressed
+        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Done, target: self, action: #selector(DetailViewController.backAction(_:)))
+        self.navigationItem.leftBarButtonItem = newBackButton;
     }
-
+    
+    func backAction(sender:UIButton) {
+        saveDetail()
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func saveDetail() {
+        
+        let insert = toDo.insert(detail <- textField.text!)
+        
+        do {
+            let rowID = try database!.run(insert)
+            print (rowID)
+        } catch {
+            print("Error creating to do: \(error)")
+        }
     }
-    */
-
+    
+    private func connect() {
+        
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+        
+        do {
+            database = try Connection("\(path)/db.sqlite3")
+        } catch {
+            print ("Cannot connect to database: \(error)")
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
